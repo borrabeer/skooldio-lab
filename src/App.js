@@ -1,25 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
-
-function App() {
+import React, { useEffect } from "react";
+import { Provider } from "react-redux";
+import store from "./store";
+import { useDispatch, useSelector } from "react-redux";
+import { getDatas } from "./actions/actions";
+//components
+import Card from "./components/Card";
+const App = () => {
+  const data = useSelector((state) => state.data.data);
+  const dispatch = useDispatch();
+  const getDatasHandler = () => {
+    dispatch(getDatas());
+  };
+  useEffect(() => {
+    getDatasHandler();
+  }, []);
+  const dataList = () => {
+    if (data) {
+      return data.map((d) => {
+        return <Card />;
+      });
+    }
+  };
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Provider store={store}>
+      <React.Fragment>{dataList()}</React.Fragment>
+    </Provider>
   );
-}
+};
 
 export default App;

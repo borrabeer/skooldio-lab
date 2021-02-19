@@ -1,13 +1,171 @@
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: "Prompt";
+  /* opacity: 0.2; */
+  /* background-color: red; */
+}
+#rectangle-card {
+  width: 442px;
+  height: 493px;
+  margin: 0 16px 0 18px;
+  padding: 12px 16px 19px 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.3);
+  /* background-color: #000; */
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+#card-logo {
+  width: 80px;
+  height: 86px;
+  padding: 0 0 1px;
+  object-fit: contain;
+}
+
+#logo-border {
+  width: 100px;
+  height: 100px;
+  margin: 0 10px 0 0;
+  padding: 7px 10px 5px;
+}
+
+#card-title {
+  color: #ff5a5a;
+  margin: 0;
+  padding: 0;
+  font-size: 24px;
+  font-weight: 600;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 0.67;
+  letter-spacing: normal;
+  text-align: left;
+}
+
+#card-subtitle {
+  color: #9b9b9b;
+  margin: 0;
+  padding: 0;
+  font-size: 20px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 0.8;
+  letter-spacing: normal;
+  text-align: left;
+}
+
+#card-subname {
+  color: #9b9b9b;
+  padding: 0;
+  margin: 0;
+  font-size: 20px;
+  font-weight: 300;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 0.8;
+  letter-spacing: normal;
+  text-align: left;
+}
+
+#card-header {
+  display: flex;
+  flex-direction: row;
+}
+
+#card-faculty {
+  display: flex;
+  flex-direction: column;
+}
+
+#img-like {
+  width: 24px;
+  height: 21px;
+  padding: 1px;
+  object-fit: contain;
+}
+
+.line {
+  width: 402px;
+  height: 3px;
+  background-color: #d8d8d8;
+}
+
+.line-box {
+  display: flex;
+  justify-content: center;
+}
+
+.card-detail, .your-score {
+  display: flex;
+  flex-direction: column;
+}
+
+#your-score {
+  text-align: right;
+}
+
+#bottom-60, #avg-score, #top-60 {
+  text-align: center;
+  margin: 10px;
+}
+
+#detail-header, #detail-score, #detail-your-score, #detail-dashboard {
+  display: flex;
+  flex-direction: row;
+}
+
+#detail-dashboard {
+  justify-content: center;
+}
+
+.round {
+  color: #fff;
+  display: flex;
+  width: 29px;
+  height: 29px;
+  border-radius: 50%;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  margin: 14px 8px;
+}
+
+.round-on {
+  background-color: #2ecc71;
+}
+
+.round-off {
+  background-color: #d8d8d8;
+}
+
+.detail-text {
+  font-size: 20px;
+  font-weight: 300;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.01;
+  letter-spacing: normal;
+  text-align: left;
+  color: #5f5f5f;
+}
+
+.edit-score-btn {
+  color: #ff5a5a;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  width: 120px;
+  height: 35px;
+  margin: 0 0 21px 229px;
+  padding: 7px 8px 7px 20px;
+  border-radius: 17.5px;
+  border: solid 1px #ff5a5a;
+}
+
+#medal {
+  width: 27px;
+  height: 35px;
+  margin: 35px 202px 24px 27px;
+  padding: 0px 0px 0.1px 0px;
+  object-fit: contain;
 }

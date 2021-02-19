@@ -1,29 +1,29 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Provider } from "react-redux";
 import store from "./store";
 import { useDispatch, useSelector } from "react-redux";
 import { getDatas } from "./actions/actions";
+import axios from "axios";
 //components
 import Card from "./components/Card";
+import Dashboard from "./components/Dashboard";
 const App = () => {
-  const data = useSelector((state) => state.data.data);
-  const dispatch = useDispatch();
-  const getDatasHandler = () => {
-    dispatch(getDatas());
-  };
+  const [data, setData] = useState({});
   useEffect(() => {
-    getDatasHandler();
-  }, []);
-  const dataList = () => {
-    if (data) {
-      return data.map((d) => {
-        return <Card />;
-      });
+    async function fetchData() {
+      const datalist = await axios.get(
+        "https://tcas-assets.skooldio.com/tmp/mock_tcaster_api.json"
+      );
+      setData(datalist);
+      console.log(datalist);
     }
-  };
+    fetchData();
+  }, []);
   return (
     <Provider store={store}>
-      <React.Fragment>{dataList()}</React.Fragment>
+      <React.Fragment>
+        <Dashboard data={data} />
+      </React.Fragment>
     </Provider>
   );
 };
